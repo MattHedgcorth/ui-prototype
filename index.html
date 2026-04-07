@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Room Prototype v5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+
+    <div id="ui-mask">
+        <div id="inspector-container">
+            <div id="server-frame" class="panel">
+                <button id="close-btn" class="cli-btn">[EXIT_SESSION]</button>
+                <h2 class="panel-title">ISOLATION_ZONE:: <span id="server-id-left">---</span></h2>
+            </div>
+
+            <div id="inspector-panel" class="panel">
+                <div class="cli-section cli-header">
+                    <h2 class="panel-title">SESSION_DATA:: <span id="server-id-right">---</span></h2>
+                    <div class="button-row">
+                        <button class="cli-btn" onclick="alert('Pinging...')">PING</button>
+                        <button class="cli-btn">TRACE_ROUTE</button>
+                    </div>
+                </div>
+                <div class="cli-section">
+                    <h3>SYSTEM_SPECS</h3>
+                    <p>NODE_TYPE: Compute-Optimize</p>
+                    <p>CPU: 26 Core Xeon Gold</p>
+                    <p>TEMP: <span class="green">32°C</span></p>
+                </div>
+                <div class="cli-section console-output" id="console-log">
+                    <h3>ACTIVE_LOGS</h3>
+                    <p>> Initializing handshake...</p>
+                    <p>> Connection <span class="green">ESTABLISHED</span></p>
+                    <p class="blink">> Monitoring packets...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
